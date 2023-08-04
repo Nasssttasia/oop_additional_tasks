@@ -8,8 +8,14 @@
 
 
 class Logger:
-    pass
+
+    def __init__(self, filename):
+        self.filename = filename
+
+    def __call__(self, message):
+        self.filename = message
 
 
 logger = Logger("log.txt")
 logger("This is a test message.")
+print(logger.filename)
